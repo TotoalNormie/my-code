@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .center{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .input-box{
+            padding: 2pc 3pc;
+            border: 2px solid black;
+            border-radius: 1.5pc;
+            /* font-size: 1.5em; */
+        }
+        .input-box * {
+            margin: .3em 0;
+            font-size: 1.2em;
+            transition: 0.3s;
+            
+        }
+        .submit:hover{
+            background-color: blue;
+            color: white;
+        }        
+
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="input-box">
+            <form action="" method="get">
+                <input type="text" name="name" id="username" placeholder="username"><br>
+                <input type="password" name="password" id="password" placeholder="password"><br>
+                <input type="submit" value="log in" class="submit">
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

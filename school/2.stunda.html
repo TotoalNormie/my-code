@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 2pc 2pc;
+        }
+        .center{
+            width: 100%;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            border: 3px solid black;
+            border-radius: 1pc;
+            box-shadow: .3pc .4pc;
+            max-width: 70%;
+        }
+        .color{
+            flex: 40%;
+            background-color: aqua;
+            border-top-left-radius: .8pc;
+            border-bottom-left-radius: .8pc;
+        }
+        .form-box{
+            width: 100%;
+            border-left: 3px solid black;
+            text-align: center;
+        }
+        .form {
+            display: flex;
+        }
+        .form > div {
+            text-align: left;
+            width: 50%;
+            margin: 1.5pc 1pc;
+        }
+        .submit{
+            background-color: aqua;
+            border-radius: .5rem;
+            font-size: 1em;
+            margin-top: 1em;
+        }
+        .submit:active{
+            background-color: aquamarine;
+
+        }
+        input, textarea{
+            max-width: 14rem;
+        }
+        p {
+            margin: 0;
+            margin-top: .5rem;
+            font-weight: 600;
+        }
+
+        @media only screen and (max-width: 850px){
+            .container {
+                display: block;
+            }
+            .form-box {
+                border: 0;
+                border-top: 3px solid black;
+            }
+            .form {
+                display: block;
+                text-align: center;
+            }
+            .form > div {
+                margin: 2em 0;
+                text-align: center;
+                width: 100%;
+            }
+            .color {
+                min-width: 100%;
+                min-height: 10pc;
+                border-top-right-radius: .8pc;
+                border-bottom-left-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="container">
+            <div class="color"></div>
+            <div class="form-box">
+                    <h2>FORMA</h2>
+                <form action="" method="get"></form>
+                    <div class="form">
+                        <div class="box-1">
+                            <p>vards:</p>
+                            <input type="text" name="" id="">
+                            <p>tel. nr:</p>
+                            <input type="number" name="" id="">
+                            <p>vecums:</p>
+                            <input type="number" name="" id="">
+                        </div>
+                        <div class="box-2">
+                            <p>datums:</p>
+                            <input type="date" name="" id="">
+                            <p>zina:</p>
+                            <textarea></textarea> <br>
+                            <input type="submit" value="iesniegt" class="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Typer</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div id="hack">
+        <p class="codeLine"></p>
+    </div>
+    <script>
+        var hackerText;
+        fetch("hackerText.json").then(response => {
+            return response.json();
+        })
+        .then(jsondata => hackerText = jsondata);
+        let line = 0, incriment = 3, pointer = 0;
+        let lineEnd = false;
+        let onePress = "";
+
+        
+        $(document).ready(function(){
+            $(document).on("keydown", function() {
+                if(lineEnd){
+                    $("#hack").append("<p class='codeLine'></p>");
+                    pointer = 0;
+                    line++;
+                    line = line > hackerText.length - 1 ? 0 : line;
+                }
+                let length = hackerText[line].length;
+                for(let i = 0; i < 3; i++){
+                    if(pointer < length){
+                        onePress += hackerText[line][pointer];
+                        pointer++;
+                        lineEnd = false;
+                    }else{
+                        lineEnd = true;
+                        break;
+                    }
+                }
+                console.log({line, pointer, length})
+                $(".codeLine").last().append(onePress);
+                window.scrollTo(0, $(".codeLine").last().offset().top);
+                onePress = "";
+            });
+        });
+    </script>
+</body>
+</html>
